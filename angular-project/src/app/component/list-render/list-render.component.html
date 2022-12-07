@@ -1,0 +1,17 @@
+<div class="aula">
+    <h2>Aula List-Render</h2>
+    <ul class="listaAnimais">
+        <li *ngFor="let animal of animals">
+            <p>
+                Name: {{animal.name}}
+            </p>
+            <p>
+                Type: {{animal.type}}
+            </p>
+            <button (click)="showAge(animal)">Descobrir Idade</button>
+            <button (click)="removeAnimal(animal)">Remover</button>
+        </li>
+        <h3>{{animalInfo}}</h3>
+    </ul>
+    <button (click)="reset()">Resetar</button>
+</div>

@@ -1,0 +1,9 @@
+<div class="aula">
+    <h2>Aula Two Way Binding</h2>
+    <form>
+        <input autocomplete="off" type="text" name="name" placeholder="Digite seu nome" id="inputName"
+            [(ngModel)]="name">
+        <input type="submit" value="Enviar">
+    </form>
+    <p *ngIf="name !== ''">Seu nome é: <strong>{{name}}</strong></p>
+</div>
