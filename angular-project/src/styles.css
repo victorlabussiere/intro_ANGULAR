@@ -26,7 +26,8 @@ body {
     padding: 4rem;
 }
 
-button {
-    padding: .4rem 2rem;
-    max-width: 15rem;
+a {
+    font-style: none;
+    font-weight: 600;
+    color: brown;
 }

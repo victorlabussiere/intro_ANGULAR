@@ -1,0 +1,34 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "name": "Wesley",
+      "type": "Cat",
+      "age": 9
+    },
+    {
+      "id": 2,
+      "name": "Kiko",
+      "type": "Cat",
+      "age": 6
+    },
+    {
+      "id": 3,
+      "name": "Mel",
+      "type": "Dog",
+      "age": 7
+    },
+    {
+      "id": 4,
+      "name": "Lua",
+      "type": "Dog",
+      "age": 7
+    },
+    {
+      "id": 5,
+      "name": "Jorge",
+      "type": "Turtle",
+      "age": 17
+    }
+  ]
+}

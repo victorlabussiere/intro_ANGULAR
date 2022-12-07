@@ -3,15 +3,18 @@
     <ul class="listaAnimais">
         <li *ngFor="let animal of animals">
             <p>
-                Name: {{animal.name}}
+                Nome: <strong>{{animal.name}}</strong>
             </p>
             <p>
                 Type: {{animal.type}}
             </p>
-            <button (click)="showAge(animal)">Descobrir Idade</button>
-            <button (click)="removeAnimal(animal)">Remover</button>
+            <div class="buttonsArea">
+                <button routerLink="/list/{{animal.id}}">Detalhes</button>
+                <button (click)="showAge(animal)">Descobrir Idade</button>
+                <button (click)="delete_animals(animal)">Remover</button>
+            </div>
         </li>
-        <h3>{{animalInfo}}</h3>
     </ul>
+    <h3 class="animalInfo">{{animalInfo}}</h3>
     <button (click)="reset()">Resetar</button>
 </div>

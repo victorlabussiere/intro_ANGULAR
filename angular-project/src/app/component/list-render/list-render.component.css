@@ -3,14 +3,46 @@
     padding: 1rem;
     gap: 2rem;
     list-style-type: none;
+    min-height: 12rem;
+}
+
+button {
+    padding: .4rem 2rem;
+    max-width: 15rem;
 }
 
 .listaAnimais li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: .4rem;
+    gap: .8rem;
 
     border: solid 1px #616161;
     padding: 1rem;
+    height: 100%;
+}
+
+.buttonsArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.animalInfo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 5rem;
+}
+
+button {
+    width: 100%;
+}
+
+p a {
+    color: inherit;
+    font-style: none;
+    text-decoration: none;
+    font-weight: 600;
 }

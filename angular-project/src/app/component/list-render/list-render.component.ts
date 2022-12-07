@@ -13,68 +13,34 @@ import { Animal } from 'src/app/Animal';
 
 export class ListRenderComponent implements OnInit {
   animalInfo!: string
-  defaultAnimals: Array<Animal> = [
-    {
-      name: 'Wesley',
-      type: 'Cat',
-      age: 9
-    },
-    {
-      name: 'Mel',
-      type: 'Dog',
-      age: 6
-    },
-    {
-      name: 'Jorge',
-      type: 'Turtle',
-      age: 12
-    },
-    {
-      name: 'Lua',
-      type: 'Dog',
-      age: 4
-    }
-  ]
-  animals: Array<Animal> = [
-    {
-      name: 'Wesley',
-      type: 'Cat',
-      age: 9
-    },
-    {
-      name: 'Mel',
-      type: 'Dog',
-      age: 6
-    },
-    {
-      name: 'Jorge',
-      type: 'Turtle',
-      age: 12
-    },
-    {
-      name: 'Lua',
-      type: 'Dog',
-      age: 4
-    }
-  ]
-  constructor(private listService: ListService) { }
+  animals: Array<Animal> = []
+
+  constructor(private listService: ListService) {
+    this.read_animals()
+  }
+
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
 
   showAge(animal: Animal): void {
-    this.animalInfo = `O animal ${animal.name} tem ${animal.age} anos`
+    this.animalInfo = `${animal.name} tem ${animal.age} anos`
   }
 
   reset() {
     this.animalInfo = ""
     this.animals.length < 4
-      ? (this.animals = this.defaultAnimals, console.clear())
+      ? (this.read_animals(), console.clear())
       : console.clear()
   }
 
-  removeAnimal(animal: Animal): void {
+  delete_animals(animal: Animal): void {
     console.log(`Removendo ${animal.name}`)
-    this.animals = this.listService.remove(this.animals, animal)
+    this.animals = this.animals.filter(element => element.name !== animal.name)
+    this.listService.remove(animal.id).subscribe()
+  }
+
+  read_animals() {
+    this.listService.getAll().subscribe(animals => this.animals = animals)
   }
 }
